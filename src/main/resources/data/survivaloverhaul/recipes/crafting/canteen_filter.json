@@ -1,0 +1,14 @@
+{
+    "type": "survivaloverhaul:canteen_charcoal_recipe",
+    "ingredients":[
+        {
+            "item": "survivaloverhaul:canteen"
+        },
+        {
+            "item": "survivaloverhaul:charcoal_filter"
+        }
+    ],
+    "result": {
+        "item": "survivaloverhaul:canteen"
+    }
+}

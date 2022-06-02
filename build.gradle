@@ -1,0 +1,87 @@
+buildscript {
+	repositories {
+		maven {
+			name 'Forge Gradle'
+			url 'https://files.minecraftforge.net/maven'
+		}
+		mavenCentral()
+	}
+	dependencies {
+		classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+	}
+}
+
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+
+version = '1.16.5-0.3.9'
+group = 'icey.survivaloverhaul'
+archivesBaseName = 'survivaloverhaul'
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+
+minecraft {
+	mappings channel: 'snapshot', version: '20210309-1.16.5'
+
+	//accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+	runs {
+		client {
+			workingDirectory project.file('run')
+			taskName 'runClient'
+			property 'forge.logging.console.level', 'debug'
+			property 'terminal.ansi', 'true'
+
+			mods {
+				difficultyreforged {
+					source sourceSets.main
+				}
+			}
+		}
+
+		server {
+			workingDirectory project.file('run')
+			property 'forge.logging.markers', 'REGISTRIES'
+			property 'forge.logging.console.level', 'debug'
+			mods {
+				difficultyreforged {
+					source sourceSets.main
+				}
+			}
+		}
+	}
+}
+
+repositories {
+	maven {
+		url "https://cursemaven.com"
+	}
+}
+
+
+dependencies {
+	minecraft 'net.minecraftforge:forge:1.16.5-36.2.28'
+
+	compileOnly fg.deobf(files('libs/SereneSeasons-1.16.5-4.0.1.91-universal.jar'))
+	compileOnly fg.deobf("curse.maven:curios-309927:3725386") // Curios API
+	runtimeOnly fg.deobf("curse.maven:curios-309927:3725386") // Curios
+}
+
+jar {
+	manifest {
+		attributes([
+				'Timestamp': System.currentTimeMillis(),
+				'Specification-Title': "DifficultyReforged",
+				'Specification-Vendor': "",
+				'Specification-Version': "",
+				'Implementation-Title': project.archivesBaseName,
+				'Implementation-Version': project.version,
+				'Implementation-Vendor' :"",
+				'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+				'Built-On-Java': "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
+				'Built-On': "1.16.5-36.2.28",
+		])
+	}
+}
+jar.finalizedBy('reobfJar')

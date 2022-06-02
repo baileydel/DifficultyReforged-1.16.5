@@ -1,0 +1,31 @@
+
+//TODO CORE
+    ORIGINAL SNOW ARMOR
+    TODO CHANGE POTION SIZE
+    TODO DOESN'T GIVE WATER BOTTLE BACK WHEN DRINKING 1 PURIFIED WATER
+    WETNESS MODIFIER
+    TEMPERATURE DISTANCE FADE
+    Bounding box for temperature blocks
+    HAND HELD TEMPERATURE ITEMS
+    Snow modifier
+    PARTICLE ON DRINK
+
+
+//TODO CONFIG
+    If compat mod is loaded push it to compat screen in gui
+    PARSE JSON CONFIG
+
+//TODO DEBUG
+    TOOL TIPS FOR ITEMS, THIRST, SATURATION, THIRSTY CHANCE, PARASITE CHANCE
+    TOOL TIPS FOR ITEMS, SHOW TEMPERATURE DURATION, SHOW TEMPERATURE
+
+
+//TODO EFFECTS
+    POWDERED SNOW FREEZE SCREEN
+    EFFECTS ON FREEZE
+    EFFECTS ON HEATSTROKE
+    SHAKE
+      if (this.isShaking(p_115317_)) {
+             p_115320_ += (float)(Math.cos((double)p_115317_.tickCount * 3.25D) * Math.PI * (double)0.4F);
+          }
+   set hearts to frozen hearts

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "survivaloverhaul:milk_bottle"
+    }
+  ],
+  "result": {
+    "item": "survivaloverhaul:chocolate_milk"
+  }
+}

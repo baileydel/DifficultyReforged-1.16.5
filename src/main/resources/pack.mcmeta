@@ -1,0 +1,7 @@
+{
+  "pack": {
+    "description": "Difficulty Reforged",
+    "pack_format": 6,
+    "_comment": "Adds temperature and thirst to 1.16.5"
+  }
+}

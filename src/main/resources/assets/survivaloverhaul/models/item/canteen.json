@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "survivaloverhaul:item/canteen"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "survivaloverhaul:empty": 1
+      },
+      "model": "survivaloverhaul:item/canteen_empty"
+    }
+  ]
+}

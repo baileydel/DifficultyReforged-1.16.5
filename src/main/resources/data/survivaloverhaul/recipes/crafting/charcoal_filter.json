@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "p",
+    "c",
+    "p"
+  ],
+  "key": {
+    "p": {
+      "item": "minecraft:paper"
+    },
+    "c": {
+      "item": "minecraft:charcoal"
+    }
+  },
+  "result": {
+    "item": "survivaloverhaul:charcoal_filter"
+  }
+}
